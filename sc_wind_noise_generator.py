@@ -280,7 +280,7 @@ class WindNoiseGenerator:
 
         return lpc_a
 
-    def plot_signals(self, wns, wind_profile):
+    def plot_signals(self, wns, wind_profile , filename ):
         """
         Plot the generated wind noise signals and the associated wind profile.
 
@@ -317,6 +317,7 @@ class WindNoiseGenerator:
         axs[1].yaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f"{x/1e3:g}"))
 
         fig.tight_layout()
+        plt.savefig("./" + filename )
         plt.show()
 
     def play_signal(self, wns):
